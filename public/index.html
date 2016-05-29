@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>
+      Did firebase deploy?
+    </p>
+
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDGOKNzi3oLaVYw7OdtZ1AbjRmuQvJm4uA",
+      authDomain: "bike-map-aa221.firebaseapp.com",
+      databaseURL: "https://bike-map-aa221.firebaseio.com",
+      storageBucket: "bike-map-aa221.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>    
+  <script src="vendor/scripts/page.js"></script>
+  <script src="js/models/bike.js"></script>
+  <script src="js/models/map.js"></script>
+  <script src="js/controllers/routes.js"></script>
+  </body>
+</html>
