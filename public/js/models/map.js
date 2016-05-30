@@ -52,6 +52,4 @@
     title: 'test marker'
   });
 
-})();
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy 
+})(window);
