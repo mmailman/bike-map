@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mmailman/bike-map/issues"
   },
-  "homepage": "https://github.com/mmailman/bike-map#readme"
+  "homepage": "https://github.com/mmailman/bike-map#readme",
+  "dependencies": {
+    "firebase": "^3.0.3"
+  }
 }
