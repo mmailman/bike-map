@@ -2,7 +2,7 @@ var snapshotVal;
 
 $('#data').on('click',function(e){
   e.preventDefault();
-  console.log('button fucking clicked');
+  console.log('button fucking clicked and I updated');
   var ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
   ref.on('value', function(snapshot) {
     snapshotVal = snapshot.val();
