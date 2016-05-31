@@ -3,16 +3,17 @@ var ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
 var gba = [];
 var gda = [];
 
-function gbaAverageFilter(arr,interval){
+var averageFilter = function (array, interval) {
   var result = [];
-  for(var i = 0; i < arr.length;i += interval){
-    arr.slice(i, interval).reduce(function(value){
+  for (i = 0; i < array.length; i += interval) {
+    var sum = array.slice(i, interval).reduce(function(value){
       return value;
     });
     result.push(sum / interval);
   }
   return result;
-}
+};
+
 ref.on('value', function(snapshot) {
   snapshotVal = snapshot.val();
   console.log(snapshot.val());
