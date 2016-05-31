@@ -65,7 +65,7 @@
         lastUpdated: BikeMap.formatTimeStamp(station.lu)
       });
       marker.addListener('click', function() {
-        var windowTitle = marker.title;
+        BikeMap.map.setCenter(marker.getPosition());
         if (infowindow) {
           infowindow.close();
         }
