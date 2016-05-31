@@ -26,7 +26,7 @@ function docksAvailableAll (){
   for(i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
     temp = [];
     snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
-      temp.push(station.ba);
+      temp.push(station.da);
       gda.push(temp);
     });
   };
