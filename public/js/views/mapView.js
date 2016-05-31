@@ -5,5 +5,6 @@
     var template = Handlebars.compile($(scriptTemplateId).text());
     return template(station);
   };
+  
   module.mapView = mapView;
 })(window);

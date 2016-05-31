@@ -47,19 +47,22 @@
     BikeMap.map.setCenter(center);
   });
 
-  // Station.requestData(Station.initStation).done(function() {
-  //   console.log('entered for each loop');
-
   BikeMap.initMarkers = function() {
     Station.all.forEach(function(station) {
-      console.log('entered for each');
       var marker = new google.maps.Marker({
         position: {lat: station.la, lng: station.lo},
         map: BikeMap.map,
-        title: station.s
+        title: station.s,
+        bikesAvailable: station.ba,
+        docksAvailable: station.da,
+        lastUpdated: station.lu
       });
-      var infowindow = new google.maps.InfoWindow({
-        content: 'Test string.'
+      marker.addListener('click', function() {
+        var windowTitle = marker.title;
+        var infowindow = new google.maps.InfoWindow({
+          content: marker.title + '<br>' + 'Bikes Available: ' + marker.bikesAvailable + '<br>' + 'Docks Available: ' + marker.docksAvailable + '<br> Last Updated: ' + marker.lastUpdated
+        });
+        infowindow.open(BikeMap.map, marker);
       });
     });
   };
