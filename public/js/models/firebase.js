@@ -1,6 +1,5 @@
 var snapshotVal;
 
-// var Firebase = require('firebase');
 $('#data').on('click',function(e){
   e.preventDefault();
   console.log('button fucking clicked');
@@ -15,3 +14,12 @@ $('#data').on('click',function(e){
     console.log('The read failed: ' + errorObject.code);
   });
 });
+
+// Initialize Firebase
+var config = {
+  apiKey: 'AIzaSyDGOKNzi3oLaVYw7OdtZ1AbjRmuQvJm4uA',
+  authDomain: 'bike-map-aa221.firebaseapp.com',
+  databaseURL: 'https://bike-map-aa221.firebaseio.com',
+  storageBucket: 'bike-map-aa221.appspot.com',
+};
+firebase.initializeApp(config);
