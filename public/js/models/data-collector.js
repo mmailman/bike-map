@@ -24,8 +24,10 @@ function bikesAvailableAll (){
 
 function docksAvailableAll (){
   for(i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
+    temp = [];
     snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
-      gda.push(station.da);
+      temp.push(station.ba);
+      gda.push(temp);
     });
   };
 }
