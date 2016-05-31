@@ -1,6 +1,7 @@
 'use strict';
 
 (function(module) {
+  var BikeMap = {};
 
   var styleArray = [
     {
@@ -46,10 +47,20 @@
     map.setCenter(center);
   });
 
-  var marker = new google.maps.Marker({
-    position: {lat: 47.618418, lng: -122.350964},
-    map: map,
-    title: 'test marker'
-  });
+  // Station.requestData(Station.initStation).done(function() {
+  //   console.log('entered for each loop');
+
+  BikeMap.initMarkers = function() {
+    Station.all.forEach(function(station) {
+      console.log('entered for each');
+      var marker = new google.maps.Marker({
+        position: {lat: station.la, lng: station.lo},
+        map: map,
+        title: station.s
+      });
+    });
+  };
+
+  module.BikeMap = BikeMap;
 
 })(window);
