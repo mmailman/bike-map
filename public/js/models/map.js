@@ -65,12 +65,12 @@
         lastUpdated: BikeMap.formatTimeStamp(station.lu)
       });
       marker.addListener('click', function() {
-        BikeMap.map.setCenter(marker.getPosition());
         if (infowindow) {
           infowindow.close();
         }
+        BikeMap.map.setCenter(marker.getPosition());
         infowindow = new google.maps.InfoWindow({
-          content: 'Location: ' + marker.title + '<br>' + 'Bikes Available: ' + marker.bikesAvailable + '<br>' + 'Docks Available: ' + marker.docksAvailable + '<br> Last Updated: ' + marker.lastUpdated
+          content: '<b>Location: </b>' + marker.title + '<br>' + '<b>Bikes Available: </b>' + marker.bikesAvailable + '<br>' + '<b>Docks Available: </b>' + marker.docksAvailable + '<br>' + '<b>Last Updated: </b>' + marker.lastUpdated
         });
         infowindow.open(BikeMap.map, marker);
       });
