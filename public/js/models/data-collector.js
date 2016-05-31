@@ -3,15 +3,23 @@ var ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
 var gba = [];
 var gda = [];
 
-var averageFilter = function (array, interval) {
-  var result = [];
+// var averageFilter = function (array, interval) {
+//   var result = [];
+//   for (i = 0; i < array.length; i += interval) {
+//     debugger;
+//     var sum = array.slice(i, i + interval).reduce(function(prev,cur){
+//       return (prev+cur);
+//     });
+//     result.push(sum / interval);
+//   }
+//   return result;
+// };
+var result = [];
+var fuckYou = function (array,interval){
   for (i = 0; i < array.length; i += interval) {
-    var sum = array.slice(i, i + interval).reduce(function(value){
-      return value;
-    });
-    result.push(sum / interval);
+    var sum = array.slice(i, i + interval);
+    result.push(sum);
   }
-  return result;
 };
 
 ref.on('value', function(snapshot) {
