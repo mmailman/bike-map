@@ -39,12 +39,12 @@
     }
   };
 
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  BikeMap.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
   google.maps.event.addDomListener(window, 'resize', function() {
-    var center = map.getCenter();
-    google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);
+    var center = BikeMap.map.getCenter();
+    google.maps.event.trigger(BikeMap.map, 'resize');
+    BikeMap.map.setCenter(center);
   });
 
   // Station.requestData(Station.initStation).done(function() {
@@ -55,8 +55,11 @@
       console.log('entered for each');
       var marker = new google.maps.Marker({
         position: {lat: station.la, lng: station.lo},
-        map: map,
+        map: BikeMap.map,
         title: station.s
+      });
+      var infowindow = new google.maps.InfoWindow({
+        content: 'Test string.'
       });
     });
   };
