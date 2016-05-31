@@ -6,7 +6,7 @@ var gda = [];
 var averageFilter = function (array, interval) {
   var result = [];
   for (i = 0; i < array.length; i += interval) {
-    var sum = array.slice(i, interval).reduce(function(value){
+    var sum = array.slice(i, i + interval).reduce(function(value){
       return value;
     });
     result.push(sum / interval);
