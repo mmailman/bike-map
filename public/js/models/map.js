@@ -41,6 +41,10 @@
     }
   };
 
+  BikeMap.formatTimeStamp = function(timestamp){
+    return new Date(timestamp).toGMTString();
+  };
+
   BikeMap.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
   google.maps.event.addDomListener(window, 'resize', function() {
@@ -48,10 +52,6 @@
     google.maps.event.trigger(BikeMap.map, 'resize');
     BikeMap.map.setCenter(center);
   });
-
-  BikeMap.formatTimeStamp = function(timestamp){
-    return new Date(timestamp).toGMTString();
-  };
 
   BikeMap.initMarkers = function() {
     Station.all.forEach(function(station) {
@@ -64,14 +64,17 @@
         docksAvailable: station.da,
         lastUpdated: BikeMap.formatTimeStamp(station.lu)
       });
+
       marker.addListener('click', function() {
         if (infowindow) {
           infowindow.close();
         }
         BikeMap.map.setCenter(marker.getPosition());
+
         infowindow = new google.maps.InfoWindow({
           content: '<b>Location: </b>' + marker.title + '<br>' + '<b>Bikes Available: </b>' + marker.bikesAvailable + '<br>' + '<b>Docks Available: </b>' + marker.docksAvailable + '<br>' + '<b>Last Updated: </b>' + marker.lastUpdated
         });
+
         infowindow.open(BikeMap.map, marker);
       });
     });
