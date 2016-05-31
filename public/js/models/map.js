@@ -1,6 +1,7 @@
 'use strict';
 
 (function(module) {
+  var BikeMap = {};
 
   var styleArray = [
     {
@@ -38,18 +39,34 @@
     }
   };
 
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  BikeMap.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
   google.maps.event.addDomListener(window, 'resize', function() {
-    var center = map.getCenter();
-    google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);
+    var center = BikeMap.map.getCenter();
+    google.maps.event.trigger(BikeMap.map, 'resize');
+    BikeMap.map.setCenter(center);
   });
 
-  var marker = new google.maps.Marker({
-    position: {lat: 47.618418, lng: -122.350964},
-    map: map,
-    title: 'test marker'
-  });
+  BikeMap.initMarkers = function() {
+    Station.all.forEach(function(station) {
+      var marker = new google.maps.Marker({
+        position: {lat: station.la, lng: station.lo},
+        map: BikeMap.map,
+        title: station.s,
+        bikesAvailable: station.ba,
+        docksAvailable: station.da,
+        lastUpdated: station.lu
+      });
+      marker.addListener('click', function() {
+        var windowTitle = marker.title;
+        var infowindow = new google.maps.InfoWindow({
+          content: marker.title + '<br>' + 'Bikes Available: ' + marker.bikesAvailable + '<br>' + 'Docks Available: ' + marker.docksAvailable + '<br> Last Updated: ' + marker.lastUpdated
+        });
+        infowindow.open(BikeMap.map, marker);
+      });
+    });
+  };
+
+  module.BikeMap = BikeMap;
 
 })(window);

@@ -16,7 +16,7 @@
       console.log('Pronto API call data: ', data);
       console.log(typeof(data));
       return data;
-    }).done(callback);
+    }).done(callback).done(BikeMap.initMarkers);
   };
 
   Station.initStation = function(data){

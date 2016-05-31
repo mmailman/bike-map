@@ -4,6 +4,19 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles/map.css">
     <title>Pronto Bike Map</title>
+    <script id="station-marker-template" type="text/x-handlebars-template">
+      <h6>{{s}}</h6>
+      <ul>
+        {{#if m}}
+          <li>Station out of Service</li>
+        {{/if}}
+        {{#if !m}}
+          <li>Bikes available: {{ba}}</li>
+          <li>Docks available: {{da}}</li>
+        {{/if}
+        <li>Last updated: {{lu}}</li>
+      </ul>
+    </script>
   </head>
   <body>
     <p>Did firebase deploy?</p>
@@ -24,6 +37,8 @@
     <script src="js/models/bike.js"></script>
     <script src="js/models/map.js"></script>
     <script src="js/models/data-collector.js"></script>
+    <script src="js/views/mapView.js"></script>
+    <script src="js/controllers/mapController.js"></script>
     <script src="js/controllers/routes.js"></script>
     <script src="js/views/chart-bikeavail.js"></script>
     <script src="js/views/chart-dockavail.js"></script>
