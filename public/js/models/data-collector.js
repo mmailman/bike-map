@@ -9,7 +9,9 @@ ref.on('value', function(snapshot) {
 });
 
 for(i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
-  console.log(Object.keys(snapshotVal.data)[i]);
+  snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
+    console.log(station.ba);
+  });
   // snapshotVal.data[i].stations.forEach(function(station){
   //   console.log(Object.keys(snapshotVal.data));
   // });
