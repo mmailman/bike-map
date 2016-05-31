@@ -1,7 +1,7 @@
 var snapshotVal;
 var ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
-gba = [];
-gda = [];
+var gba = [];
+var gda = [];
 
 ref.on('value', function(snapshot) {
   snapshotVal = snapshot.val();
@@ -13,6 +13,7 @@ ref.on('value', function(snapshot) {
 });
 
 function bikesAvailableAll (){
+  gba = [];
   for(i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
     temp = [];
     snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
@@ -23,6 +24,7 @@ function bikesAvailableAll (){
 }
 
 function docksAvailableAll (){
+  gda = [];
   for(i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
     temp = [];
     snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
