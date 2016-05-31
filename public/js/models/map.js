@@ -3,6 +3,8 @@
 (function(module) {
   var BikeMap = {};
 
+  var infowindow;
+
   var styleArray = [
     {
       featureType: 'all',
@@ -47,20 +49,28 @@
     BikeMap.map.setCenter(center);
   });
 
+  BikeMap.formatTimeStamp = function(timestamp){
+    return new Date(timestamp).toGMTString();
+  };
+
   BikeMap.initMarkers = function() {
     Station.all.forEach(function(station) {
       var marker = new google.maps.Marker({
         position: {lat: station.la, lng: station.lo},
         map: BikeMap.map,
+        icon: 'images/icons/parking_bicycle-2.png',
         title: station.s,
         bikesAvailable: station.ba,
         docksAvailable: station.da,
-        lastUpdated: station.lu
+        lastUpdated: BikeMap.formatTimeStamp(station.lu)
       });
       marker.addListener('click', function() {
         var windowTitle = marker.title;
-        var infowindow = new google.maps.InfoWindow({
-          content: marker.title + '<br>' + 'Bikes Available: ' + marker.bikesAvailable + '<br>' + 'Docks Available: ' + marker.docksAvailable + '<br> Last Updated: ' + marker.lastUpdated
+        if (infowindow) {
+          infowindow.close();
+        }
+        infowindow = new google.maps.InfoWindow({
+          content: 'Location: ' + marker.title + '<br>' + 'Bikes Available: ' + marker.bikesAvailable + '<br>' + 'Docks Available: ' + marker.docksAvailable + '<br> Last Updated: ' + marker.lastUpdated
         });
         infowindow.open(BikeMap.map, marker);
       });
