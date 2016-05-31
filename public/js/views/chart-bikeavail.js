@@ -9,11 +9,11 @@ var stationData = [];
   //when user selects a station on the stats page, select array index with chooseStationBikes to generate station-specific array, then call displayBikeAvailChart
   function displayBikeAvailChart() {
     console.log('displaying bike availability chart');
-    var ctx = document.getElementById('chart-bikeavail').getContext('2d');
-    var bikeAvailChart = new Chart(ctx, {
+    var bikectx = document.getElementById('chart-bikeavail').getContext('2d');
+    var bikeAvailChart = new Chart(bikectx, {
       type: 'line',
       data: {
-        labels: [], //this needs to be an array of labels just as long as the data, so timestamps I guess
+        labels: stationData, //this needs to be an array of labels just as long as the data, timestamps in the future but just reusing data for now
         datasets: [{
           label: 'Weekly Bike Availability',
           fill: false,
