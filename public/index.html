@@ -23,21 +23,31 @@
       <canvas id="chart-bikeavail" width="400" height="400"></canvas>
       <canvas id="chart-dockavail" width="400" height="400"></canvas>
     </div>
+
+    <div id="map"></div>
+
     <div id="map" class="googlemap"></div>
+
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAC51CgW0JEd0tSa1b3L_KsClfvDkmDlQ&v=3.exp&libraries=visualization"></script>
+    <script src="https://maps.googleapis.com/maps/api/directions/json?key=AIzaSyAAC51CgW0JEd0tSa1b3L_KsClfvDkmDlQ"></script>
     <script src="vendor/scripts/Chart.bundle.min.js"></script>
     <script src="js/models/firebase.js"></script>
     <script src="vendor/scripts/page.js"></script>
+
     <script src="js/models/bike.js"></script>
     <script src="js/models/map.js"></script>
     <script src="js/models/data-collector.js"></script>
+
     <script src="js/views/mapView.js"></script>
+    <script src="js/views/chart-bikeavail.js"></script>
+    <script src="js/views/chart-dockavail.js"></script>
+    <script src="js/views/chart-avail.js"></script>
+
     <script src="js/controllers/mapController.js"></script>
     <script src="js/controllers/routes.js"></script>
-    <script src="js/views/chart-avail.js"></script>
   </body>
 </html>
