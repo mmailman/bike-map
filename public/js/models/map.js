@@ -81,8 +81,7 @@
           content: '<strong>Location: </strong>' + marker.title +
           '<br />' + '<strong>Bikes Available: </strong>' + marker.bikesAvailable +
           '<br />' + '<strong>Docks Available: </strong>' + marker.docksAvailable +
-          '<br />' + '<strong>Last Updated: </strong>' + marker.lastUpdated +
-          '<br />' + '<a href="' + BikeMap""''
+          '<br />' + '<strong>Last Updated: </strong>' + marker.lastUpdated
         });
 
         infowindow.open(BikeMap.map, marker);
