@@ -4,6 +4,8 @@ function displayAvailChart(bikeArray, dockArray) {
   var bikectx = document.getElementById('chart-bikeavail').getContext('2d');
   var bikeAvailChart = new Chart(bikectx, {
     type: 'line',
+    responsive: true,
+    maintainAspectRatio: false,
     data: {
       labels: bikeArray, //TODO: this needs to be an array of labels; either figure out how to disable this or figure something out instead of reusing
       datasets: [{
