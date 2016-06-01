@@ -1,0 +1,13 @@
+#map {
+  margin: 0 5%;
+  height: 0;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  border: 2px solid black;
+}
+
+#map-directions {
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+}
