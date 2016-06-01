@@ -4,10 +4,11 @@ var gba = [];
 var gda = [];
 
 var averageFilter = function (array, interval) {
-  for(var i = 0; i < arrArr.length; i ++) {
-    newArr.push(arrArr[i].reduce(function(prev,cur){
+  var average = [];
+  for(var i = 0; i < array.length; i ++) {
+    average.push(array[i].reduce(function(prev,cur){
       return (prev + cur);
-    }) / arrArr[i].length);
+    }) / array[i].length);
   }
 };
 
