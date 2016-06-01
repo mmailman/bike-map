@@ -41,7 +41,7 @@
     }
   };
 
-  BikeMap.formatTimeStamp = function(timestamp){
+  BikeMap.formatTimeStamp = function(timestamp) {
     return new Date(timestamp).toLocaleString(navigator.language, {
       month: '2-digit',
       day: '2-digit',
@@ -84,9 +84,52 @@
         infowindow.open(BikeMap.map, marker);
       });
     });
-    BikeMap.bikeLayer = new google.maps.BicyclingLayer();
-    BikeMap.bikeLayer.setMap(BikeMap.map);
   };
+
+  BikeMap.getDirections = function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        var distanceArray = Station.all.map(function(station) {
+          return {
+            distance: BikeMap.getDistance(pos.lat, pos.lng, station.la, station.lo),
+            station: station
+          };
+        }).sort(function(a, b) {
+          if (a.distance > b.distance) {
+            return -1;
+          }
+          if (b.distance > a.distance) {
+            return 1;
+            return 0;
+          }
+        }).reverse();
+        console.log(distanceArray);
+      });
+    }
+  };
+
+  BikeMap.getDistance = function(originLat, originLng, destLat, destLng, unit) {
+    var userLat = Math.PI * originLat / 180;
+    var userLng = Math.PI * originLng / 180;
+    var stationLat = Math.PI * destLat / 180;
+    var stationLng = Math.PI * destLng / 180;
+    var theta = originLng - destLng;
+    var radTheta = Math.PI * theta / 180;
+    var dist = Math.sin(userLat) * Math.sin(stationLat) + Math.cos(userLat) * Math.cos(stationLat) * Math.cos(radTheta);
+    dist = Math.acos(dist);
+    dist = dist * 180 / Math.PI;
+    dist = dist * 60 * 1.515;
+    if (unit === 'K') {
+      dist = dist * 1.609344;
+    }; //converts to km
+    return dist;
+  };
+
+  // dist = Math.round(dist * 100) / 100;
 
   module.BikeMap = BikeMap;
 
