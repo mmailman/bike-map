@@ -5,7 +5,6 @@
   mapController.index = function() {
     Station.requestData(Station.initStation);
     mapController.findNearestStationHandler();
-    mapController.infoWindowDirectionsHandler();
   };
 
   mapController.findNearestStationHandler = function() {
