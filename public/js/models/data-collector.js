@@ -16,13 +16,13 @@ var averageAllFilter = function (array) {
 
 var condenseAverage = function(array, interval){
   var result = [];
-  // var avg = [];
   for (var i = 0; i < array.length; i += interval) {
     var sum = array.slice(i, i + interval).reduce(function(prev, cur){
       return prev + cur;
     });
     result.push(Math.floor(sum / interval));
   }
+  result.pop();
   return result;
 };
 //station will be 0-53.
