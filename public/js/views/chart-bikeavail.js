@@ -28,5 +28,14 @@ function displayBikeAvailChart(inputArray) {
         data: inputArray,
       }]
     },
+    options: {
+      scales: {
+        xAxes: [{
+          ticks: {
+            display: false
+          }
+        }]
+      }
+    }
   });
 };

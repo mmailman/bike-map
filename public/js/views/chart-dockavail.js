@@ -28,5 +28,14 @@ function displayDockAvailChart(inputArray) {
         data: inputArray,
       }]
     },
+    options: {
+      scales: {
+        xAxes: [{
+          ticks: {
+            display: false
+          }
+        }]
+      }
+    }
   });
 };
