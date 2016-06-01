@@ -9,7 +9,7 @@ function displayAvailChart(bikeArray, dockArray) {
       datasets: [{
         label: 'Weekly Bike Availability',
         fill: false,
-        lineTension: 0.1,
+        lineTension: 0.25,
         backgroundColor: 'rgba(75,192,192,0.4)',
         borderColor: 'rgba(75,192,192,1)',
         borderCapStyle: 'butt',
@@ -29,7 +29,7 @@ function displayAvailChart(bikeArray, dockArray) {
       },{
         label: 'Weekly Dock Availability',
         fill: false,
-        lineTension: 0.1,
+        lineTension: 0.25,
         backgroundColor: 'rgba(75,192,192,0.4)',
         borderColor: 'rgba(75,192,192,1)',
         borderCapStyle: 'butt',
@@ -53,6 +53,11 @@ function displayAvailChart(bikeArray, dockArray) {
         xAxes: [{
           ticks: {
             display: false
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
           }
         }]
       }
