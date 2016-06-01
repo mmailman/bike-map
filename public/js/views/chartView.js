@@ -1,4 +1,6 @@
 (function(module) {
+  var chartView = {};
+
   chartView.dropDown = function(){
     Station.all.forEach(function(station){
       $('#station-select').append(function(){
