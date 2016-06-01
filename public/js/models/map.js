@@ -78,7 +78,11 @@
         BikeMap.map.setCenter(marker.getPosition());
 
         infowindow = new google.maps.InfoWindow({
-          content: '<strong>Location: </strong>' + marker.title + '<br />' + '<strong>Bikes Available: </strong>' + marker.bikesAvailable + '<br />' + '<strong>Docks Available: </strong>' + marker.docksAvailable + '<br />' + '<strong>Last Updated: </strong>' + marker.lastUpdated
+          content: '<strong>Location: </strong>' + marker.title +
+          '<br />' + '<strong>Bikes Available: </strong>' + marker.bikesAvailable +
+          '<br />' + '<strong>Docks Available: </strong>' + marker.docksAvailable +
+          '<br />' + '<strong>Last Updated: </strong>' + marker.lastUpdated +
+          '<br />' + '<a href="' + BikeMap""''
         });
 
         infowindow.open(BikeMap.map, marker);

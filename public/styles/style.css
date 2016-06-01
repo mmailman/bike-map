@@ -69,6 +69,7 @@ nav {
   background: #002244;
   width: 100%; }
   nav ul {
+    display: inline-block;
     list-style-type: none;
     padding-left: 0.5rem; }
   nav li {
@@ -80,6 +81,9 @@ nav {
     color: #fff; }
   nav a:hover {
     text-decoration: underline; }
+  .nearest-me-link {
+    float: right;
+  }
 
 .data-charts {
   width: 100%;
