@@ -1,7 +1,8 @@
 var snapshotVal;
 var ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
-gba = [];
-gda = [];
+var gba = [];
+var gda = [];
+var result = [];
 
 ref.on('value', function(snapshot) {
   snapshotVal = snapshot.val();
@@ -11,6 +12,14 @@ ref.on('value', function(snapshot) {
 }, function (errorObject) {
   console.log('The read failed: ' + errorObject.code);
 });
+
+function gbaReduce (arrArr){
+  for(var i = 0; i < arrArr.length; i ++) {
+    result.push(arrArr[i].reduce(function(prev,cur){
+      return (prev + cur)
+ })/arrArr[i].length);
+}
+
 
 function bikesAvailableAll (){
   for(i = 0 ; i < Object.keys(snapshotVal.data).length; i++){

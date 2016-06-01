@@ -78,6 +78,8 @@
         infowindow.open(BikeMap.map, marker);
       });
     });
+    BikeMap.bikeLayer = new google.maps.BicyclingLayer();
+    BikeMap.bikeLayer.setMap(BikeMap.map);
   };
 
   module.BikeMap = BikeMap;
