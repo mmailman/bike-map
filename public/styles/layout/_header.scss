@@ -1,0 +1,16 @@
+nav {
+  position: fixed;
+  height: 1.5rem;
+  ul {
+list-style-type: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}

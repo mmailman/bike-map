@@ -51,13 +51,45 @@ table {
   display: table;
   clear: both; }
 
-html, body {
-  font-size: 16px; }
+html {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5; }
+
+body {
+  width: 100%; }
+
+@media screen and (min-width: 48rem) {
+  body {
+    width: 48rem;
+    margin: 0 auto; } }
+nav {
+  position: fixed;
+  height: 1.5rem; }
+  nav ul {
+    list-style-type: none; }
+  nav li {
+    display: inline-block; }
+  nav a {
+    text-decoration: none; }
+  nav a:hover {
+    text-decoration: underline; }
+
+.data-charts {
+  width: 100%;
+  height: 30rem; }
+
+canvas {
+  width: 100%;
+  height: 100%; }
 
 .googlemap {
-  margin: 0 1.25rem;
+  margin: 0 auto;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  border: 2px solid #000; }
+  border: 2px solid #000;
+  min-height: 20rem;
+  /* TODO: fix this once page is routing right */
+  height: 100%; }
 
 /*# sourceMappingURL=style.css.map */
