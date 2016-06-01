@@ -72,10 +72,10 @@
       });
 
       marker.addListener('click', function() {
+        BikeMap.map.setCenter(marker.getPosition());
         if (infowindow) {
           infowindow.close();
         }
-        BikeMap.map.setCenter(marker.getPosition());
 
         infowindow = new google.maps.InfoWindow({
           content: '<strong>Location: </strong>' + marker.title +
