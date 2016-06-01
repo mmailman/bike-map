@@ -34,15 +34,15 @@ function docksAvailableAll (){
   };
 }
 
-var averageFilter = function (array, interval) {
-  var result = [];
-  for (var i = 0; i < array.length; i += interval) {
-  //   console.log(array.slice(i, i + interval));
-  var sum = array.slice(i, i + interval).reduce(function(prev, cur){
-    return prev + cur;
-  });
-  result.push(sum / interval);
-  }
-
-  return result;
-};
+//this needs to be rebuilt after Kyle's getData branch (pair programming ~~)
+// var averageFilter = function (array, interval) {
+//   var result = [];
+//   for (var i = 0; i < array.length; i += interval) {
+//     var sum = array.slice(i, i + interval).reduce(function(prev, cur){
+//       return prev + cur;
+//     });
+//     result.push(sum / interval);
+//   }
+//
+//   return result;
+// };
