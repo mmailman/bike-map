@@ -1,18 +1,11 @@
 'use strict';
-var stationData = [];
-var chooseStationBikes = function(stationId) { //this uses array index; if we use id we have to subtract 1
-  for (i = 0; i < gba.length; i++) {
-    stationData.push(gda[i][stationId]);
-  }
-};
-//when user selects a station on the stats page, select array index with chooseStationBikes to generate station-specific array, then call displayBikeAvailChart
 function displayDockAvailChart(inputArray) {
   console.log('displaying dock availability chart');
   var bikectx = document.getElementById('chart-dockavail').getContext('2d');
   var bikeAvailChart = new Chart(bikectx, {
     type: 'line',
     data: {
-      labels: inputArray, //this needs to be an array of labels just as long as the data, timestamps in the future but just reusing data for now
+      labels: inputArray, //TODO: this needs to be an array of labels; either figure out how to disable this or figure something out instead of reusing
       datasets: [{
         label: 'Weekly Dock Availability',
         fill: false,
