@@ -72,13 +72,16 @@
       });
 
       marker.addListener('click', function() {
+        BikeMap.map.setCenter(marker.getPosition());
         if (infowindow) {
           infowindow.close();
         }
-        BikeMap.map.setCenter(marker.getPosition());
 
         infowindow = new google.maps.InfoWindow({
-          content: '<strong>Location: </strong>' + marker.title + '<br />' + '<strong>Bikes Available: </strong>' + marker.bikesAvailable + '<br />' + '<strong>Docks Available: </strong>' + marker.docksAvailable + '<br />' + '<strong>Last Updated: </strong>' + marker.lastUpdated
+          content: '<strong>Location: </strong>' + marker.title +
+          '<br />' + '<strong>Bikes Available: </strong>' + marker.bikesAvailable +
+          '<br />' + '<strong>Docks Available: </strong>' + marker.docksAvailable +
+          '<br />' + '<strong>Last Updated: </strong>' + marker.lastUpdated
         });
 
         infowindow.open(BikeMap.map, marker);

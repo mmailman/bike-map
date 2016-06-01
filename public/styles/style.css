@@ -56,24 +56,34 @@ html {
   font-family: 'Roboto', sans-serif;
   line-height: 1.5; }
 
-body {
+body, main {
   width: 100%; }
 
 @media screen and (min-width: 48rem) {
-  body {
+  main {
     width: 48rem;
     margin: 0 auto; } }
 nav {
   position: fixed;
-  height: 1.5rem; }
+  height: 2rem;
+  background: #002244;
+  width: 100%; }
   nav ul {
-    list-style-type: none; }
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0.5rem; }
   nav li {
-    display: inline-block; }
+    display: inline-block;
+    line-height: 2rem;
+    padding-right: 0.5rem; }
   nav a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #fff; }
   nav a:hover {
     text-decoration: underline; }
+  .nearest-me-link {
+    float: right;
+  }
 
 .data-charts {
   width: 100%;
