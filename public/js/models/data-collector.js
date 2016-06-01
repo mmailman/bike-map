@@ -10,6 +10,7 @@ var averageFilter = function (array, interval) {
       return (prev + cur);
     }) / array[i].length);
   }
+  return average;
 };
 
 ref.on('value', function(snapshot) {
