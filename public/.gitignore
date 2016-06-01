@@ -1,0 +1,9 @@
+#system files
+.DS_Store
+Thumbs.db
+
+#sass
+.sass-cache
+
+#node dependencies
+node_modules
