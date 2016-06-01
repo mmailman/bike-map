@@ -6,13 +6,13 @@ var chooseStationBikes = function(stationId) { //this uses array index; if we us
   }
 };
 //when user selects a station on the stats page, select array index with chooseStationBikes to generate station-specific array, then call displayBikeAvailChart
-function displayDockAvailChart() {
+function displayDockAvailChart(inputArray) {
   console.log('displaying dock availability chart');
   var bikectx = document.getElementById('chart-dockavail').getContext('2d');
   var bikeAvailChart = new Chart(bikectx, {
     type: 'line',
     data: {
-      labels: stationData, //this needs to be an array of labels just as long as the data, timestamps in the future but just reusing data for now
+      labels: inputArray, //this needs to be an array of labels just as long as the data, timestamps in the future but just reusing data for now
       datasets: [{
         label: 'Weekly Dock Availability',
         fill: false,
@@ -32,7 +32,7 @@ function displayDockAvailChart() {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: stationData, //ex gda[0][0]first is the timestamp, second is station index in array (id -1)
+        data: inputArray,
       }]
     },
   });
