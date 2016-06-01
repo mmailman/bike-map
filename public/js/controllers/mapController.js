@@ -4,7 +4,7 @@
 
   mapController.index = function() {
     Station.requestData(Station.initStation);
-    BikeMap.getDirections();
+    // BikeMap.getDirections();
   };
 
   module.mapController = mapController;
