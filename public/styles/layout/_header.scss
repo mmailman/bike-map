@@ -1,14 +1,24 @@
-nav {
+header {
   position: fixed;
-  height: 1.5rem;
+  height: 2rem;
+  background: $gray;
+  width: 100%;
+}
+nav {
+  max-width: 60rem;
+  margin: 0 auto;
   ul {
-list-style-type: none;
+    list-style-type: none;
+    padding-left: 0.5rem;
   }
   li {
     display: inline-block;
+    line-height: 2rem;
+    padding-right: 0.5rem;
   }
   a {
     text-decoration: none;
+    color: #fff;
   }
   a:hover {
     text-decoration: underline;

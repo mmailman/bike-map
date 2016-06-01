@@ -59,35 +59,54 @@ html {
 body {
   width: 100%; }
 
-@media screen and (min-width: 48rem) {
-  body {
-    width: 48rem;
-    margin: 0 auto; } }
-nav {
+body {
+  background: #002244; }
+
+header {
   position: fixed;
-  height: 1.5rem; }
+  height: 2rem;
+  background: #A5ACAF;
+  width: 100%; }
+
+nav {
+  max-width: 60rem;
+  margin: 0 auto; }
   nav ul {
-    list-style-type: none; }
+    list-style-type: none;
+    padding-left: 0.5rem; }
   nav li {
-    display: inline-block; }
+    display: inline-block;
+    line-height: 2rem;
+    padding-right: 0.5rem; }
   nav a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #fff; }
   nav a:hover {
     text-decoration: underline; }
 
+main {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding-top: 2rem; }
+
+@media screen and (min-width: 48rem) {
+  main {
+    max-width: 60rem;
+    margin: 0 auto; } }
 .data-charts {
   width: 100%;
-  height: 30rem; }
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem; }
 
 canvas {
   width: 100%;
   height: 100%; }
 
 .googlemap {
-  margin: 0 auto;
+  margin: 1.25rem auto;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  border: 2px solid #000;
   min-height: 20rem;
   /* TODO: fix this once page is routing right */
   height: 100%; }
