@@ -1,7 +1,7 @@
 var snapshotVal;
 var ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
-gba = [];
-gda = [];
+var gba = [];
+var gda = [];
 
 ref.on('value', function(snapshot) {
   snapshotVal = snapshot.val();
@@ -13,7 +13,8 @@ ref.on('value', function(snapshot) {
 });
 
 function bikesAvailableAll (){
-  for(i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
+  gba = [];
+  for(var i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
     temp = [];
     snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
       temp.push(station.ba);
@@ -23,11 +24,25 @@ function bikesAvailableAll (){
 }
 
 function docksAvailableAll (){
-  for(i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
+  gda = [];
+  for(var i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
     temp = [];
     snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
-      temp.push(station.ba);
+      temp.push(station.da);
       gda.push(temp);
     });
   };
 }
+
+var averageFilter = function (array, interval) {
+  var result = [];
+  for (var i = 0; i < array.length; i += interval) {
+  //   console.log(array.slice(i, i + interval));
+  var sum = array.slice(i, i + interval).reduce(function(prev, cur){
+    return prev + cur;
+  });
+  result.push(sum / interval);
+  }
+
+  return result;
+};
