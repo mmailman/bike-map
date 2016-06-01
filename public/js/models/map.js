@@ -42,7 +42,7 @@
   };
 
   BikeMap.formatTimeStamp = function(timestamp){
-    return new Date(timestamp).toGMTString();
+    return new Date(timestamp).toLocaleString(navigator.language, {month: '2-digit', day: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit'});
   };
 
   BikeMap.map = new google.maps.Map(document.getElementById('map'), mapOptions);
