@@ -1,8 +1,7 @@
 .googlemap {
-  margin: 0 auto;
+  margin: $gutter auto;
   padding-top: $gutter;
   padding-bottom: $gutter;
-  border: 2px solid #000;
   min-height: 20rem; /* TODO: fix this once page is routing right */
   height: 100%;
 }

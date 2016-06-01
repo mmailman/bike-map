@@ -1,6 +1,7 @@
 .data-charts {
   width: 100%;
-  height: 30rem;
+  margin-bottom: $gutter;
+  padding-bottom: $gutter;
 }
 canvas {
   width: 100%;

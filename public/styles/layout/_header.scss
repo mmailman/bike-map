@@ -1,8 +1,12 @@
-nav {
+header {
   position: fixed;
   height: 2rem;
-  background: $navy;
+  background: $gray;
   width: 100%;
+}
+nav {
+  max-width: 60rem;
+  margin: 0 auto;
   ul {
     list-style-type: none;
     padding-left: 0.5rem;
@@ -18,5 +22,6 @@ nav {
   }
   a:hover {
     text-decoration: underline;
+    color: $green;
   }
 }
