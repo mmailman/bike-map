@@ -1,3 +1,9 @@
-html, body {
-  font-size: $font-size;
+body {
+width: 100%;
+}
+@media screen and (min-width: 48rem ) {
+  body {
+    width: 48rem;
+    margin: 0 auto;
+  }
 }
