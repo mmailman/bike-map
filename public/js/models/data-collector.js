@@ -55,6 +55,7 @@ ref.on('value', function(snapshot) {
   console.log(snapshot.val());
   bikesAvailableAll();
   docksAvailableAll();
+  chartView.dropDown();
   displayAvailChart(condenseAverage(averageAllFilter(gba),12),condenseAverage(averageAllFilter(gda),12));
 }, function (errorObject) {
   console.log('The read failed: ' + errorObject.code);
