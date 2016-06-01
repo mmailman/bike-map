@@ -5,7 +5,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/style.css">
     <title>Pronto Bike Map</title>
-    <script id="station-marker-template" type="text/x-handlebars-template">
+    <script id="station-filter-template" type="text/x-handlebars-template">
+      <option value="{{s}}">{{s}}</option>
+    </script>
+    <!-- <script id="station-marker-template" type="text/x-handlebars-template">
       <h6>{{s}}</h6>
       <ul>
         {{#if m}}
@@ -17,7 +20,7 @@
         {{/if}
         <li>Last updated: {{lu}}</li>
       </ul>
-    </script>
+    </script> -->
   </head>
   <body>
     <header>
@@ -33,6 +36,9 @@
     <div class="data-charts">
       <canvas id="chart-bikeavail"></canvas>
     </div>
+    <select class="" id="station-select">
+      Select Your Station
+    </select>
 
     <div id="map" class="googlemap"></div>
   </main>
@@ -49,7 +55,7 @@
     <script src="js/models/bike.js"></script>
     <script src="js/models/map.js"></script>
     <script src="js/models/data-collector.js"></script>
-
+    <script src="js/views/chartView.js"></script>
     <script src="js/views/mapView.js"></script>
     <script src="js/views/chart-avail.js"></script>
 
