@@ -5,7 +5,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/style.css">
     <title>Pronto Bike Map</title>
-    <script id="station-marker-template" type="text/x-handlebars-template">
+    <script id="station-filter-template" type="text/x-handlebars-template">
+      <option value="{{id}}">{{s}}</option>
+    </script>
+    <!-- <script id="station-marker-template" type="text/x-handlebars-template">
       <h6>{{s}}</h6>
       <ul>
         {{#if m}}
@@ -17,7 +20,7 @@
         {{/if}
         <li>Last updated: {{lu}}</li>
       </ul>
-    </script>
+    </script> -->
   </head>
   <body>
     <header>
@@ -27,12 +30,19 @@
           <li><a href="/stats">Stats</a></li>
           <li><a href="/about">About</a></li>
         </ul>
+
+        <ul class="nearest-me-link">
+          <li><a id="find-nearest-station"> Station Nearest to Me! </a></li>
+        </ul>
       </nav>
     </header>
   <main>
     <div class="data-charts">
       <canvas id="chart-bikeavail"></canvas>
     </div>
+    <select class="" id="station-select">
+      <option value=""> Select Your Station </option>
+    </select>
 
     <div id="map" class="googlemap"></div>
   </main>
@@ -41,7 +51,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAC51CgW0JEd0tSa1b3L_KsClfvDkmDlQ&v=3.exp&libraries=visualization"></script>
-    <script src="https://maps.googleapis.com/maps/api/directions/json?key=AIzaSyAAC51CgW0JEd0tSa1b3L_KsClfvDkmDlQ"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/directions/json?key=AIzaSyAAC51CgW0JEd0tSa1b3L_KsClfvDkmDlQ"></script> -->
     <script src="vendor/scripts/Chart.bundle.min.js"></script>
     <script src="js/models/firebase.js"></script>
     <script src="vendor/scripts/page.js"></script>
@@ -49,11 +59,11 @@
     <script src="js/models/bike.js"></script>
     <script src="js/models/map.js"></script>
     <script src="js/models/data-collector.js"></script>
-
+    <script src="js/views/chartView.js"></script>
     <script src="js/views/mapView.js"></script>
     <script src="js/views/chart-avail.js"></script>
-
     <script src="js/controllers/mapController.js"></script>
     <script src="js/controllers/routes.js"></script>
+    <script src="js/controllers/chartController.js"></script>
   </body>
 </html>
