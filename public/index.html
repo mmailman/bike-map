@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles/map.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Pronto Bike Map</title>
     <script id="station-marker-template" type="text/x-handlebars-template">
       <h6>{{s}}</h6>
@@ -19,16 +19,14 @@
     </script>
   </head>
   <body>
-    <p>Did firebase deploy?</p>
-    <button id="data" type="button" name="button">GET DATA</button>
-
     <div class="data">
       <canvas id="chart-bikeavail" width="400" height="400"></canvas>
       <canvas id="chart-dockavail" width="400" height="400"></canvas>
     </div>
 
     <div id="map"></div>
-    <div id="map-directions"></div>
+
+    <div id="map" class="googlemap"></div>
 
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
@@ -47,6 +45,7 @@
     <script src="js/views/mapView.js"></script>
     <script src="js/views/chart-bikeavail.js"></script>
     <script src="js/views/chart-dockavail.js"></script>
+    <script src="js/views/chart-avail.js"></script>
 
     <script src="js/controllers/mapController.js"></script>
     <script src="js/controllers/routes.js"></script>

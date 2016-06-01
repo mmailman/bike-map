@@ -8,20 +8,21 @@ var averageAll = [];
 var averageAllFilter = function(array) {
   averageAll = [];
   for(var i = 0; i < array.length; i ++) {
-    averageAll.push(array[i].reduce(function(prev,cur){
+    averageAll.push(Math.floor(array[i].reduce(function(prev,cur){
       return (prev + cur);
-    }) / array[i].length);
+    }) / array[i].length));
   }
   return averageAll;
 };
 
 var condenseAverage = function(array, interval) {
   var result = [];
+  // var avg = [];
   for (var i = 0; i < array.length; i += interval) {
     var sum = array.slice(i, i + interval).reduce(function(prev, cur){
       return prev + cur;
     });
-    result.push(sum / interval);
+    result.push(Math.floor(sum / interval));
   }
   return result;
 };
@@ -54,6 +55,7 @@ ref.on('value', function(snapshot) {
   console.log(snapshot.val());
   bikesAvailableAll();
   docksAvailableAll();
+  displayAvailChart(condenseAverage(averageAllFilter(gba),12),condenseAverage(averageAllFilter(gda),12));
 }, function (errorObject) {
   console.log('The read failed: ' + errorObject.code);
 });
