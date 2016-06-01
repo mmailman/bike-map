@@ -1,0 +1,8 @@
+#system files
+.DS_Store
+
+#sass
+.sass-cache
+
+#node dependencies
+node_modules
