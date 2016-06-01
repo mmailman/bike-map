@@ -7,29 +7,29 @@ function displayAvailChart(bikeArray, dockArray) {
     data: {
       labels: bikeArray, //TODO: this needs to be an array of labels; either figure out how to disable this or figure something out instead of reusing
       datasets: [{
-        label: 'Weekly Bike Availability',
+        label: 'Avg. Weekly Bike Availability',
         fill: false,
-        lineTension: 0.1,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
+        lineTension: 0.25,
+        backgroundColor: 'rgba(220,180,0,0.4)',
+        borderColor: 'rgba(220,180,0,1)',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: 'miter',
-        pointBorderColor: 'rgba(75,192,192,1)',
+        pointBorderColor: 'rgba(220,180,0,1)',
         pointBackgroundColor: '#fff',
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-        pointHoverBorderColor: 'rgba(220,220,220,1)',
+        pointHoverBackgroundColor: 'rgba(220,180,0,1)',
+        pointHoverBorderColor: 'rgba(220,180,0,1)',
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
         data: bikeArray,
       },{
-        label: 'Weekly Dock Availability',
+        label: 'Avg. Weekly Dock Availability',
         fill: false,
-        lineTension: 0.1,
+        lineTension: 0.25,
         backgroundColor: 'rgba(75,192,192,0.4)',
         borderColor: 'rgba(75,192,192,1)',
         borderCapStyle: 'butt',
@@ -53,6 +53,14 @@ function displayAvailChart(bikeArray, dockArray) {
         xAxes: [{
           ticks: {
             display: false
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            max: 20,
+            min: 0,
+            stepSize: 1,
+            beginAtZero:true
           }
         }]
       }
