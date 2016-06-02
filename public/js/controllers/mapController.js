@@ -3,6 +3,7 @@
   var mapController = {};
 
   mapController.index = function() {
+    $('.map-page').show().siblings().hide();
     Station.requestData(Station.initStation);
     mapController.findNearestStationHandler();
   };
