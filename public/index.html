@@ -39,14 +39,19 @@
     </section>
     <section class="about-page">
       <h2>About Us</h2>
-      <h3>James Moon</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h3>Peter Breen</h3>
+      <p>I do front-end development in Seattle, take photos (of airplanes, mostly), and hike mountains from time to time. I used to think I wanted to be an archivist. Now I think about making usable websites.</p>
+
+      <p>Chances are, if an airplane flies overhead, I can either identify it or look it up. It's not like I have a frequently-used app just to find out just what model, carrier, and flight it is or anything.</p>
+
       <h3>Kyle Kennedy</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
       <h3>Michael Mailman</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <h3>Peter Breen</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>This is Mike's biggest foray into web development as a web developer. Coming from a background of QA/SDET testing and automation, he hasn't had the pleasure of experiencing development from the developer perspective. He is finding that his background as an SDET has given him more of an awareness of quality that he tries to apply to code to produce higher quality code.</p>
+
+      <h3>James Moon</h3>
+      <p>My name is James and I'm just stepping into coding. My limited experience would boil down to making websites in the past, but mostly using HTML. So far this has been a great learning experience with skills I'd like to see myself use in the future. Outside of this you can usually find me at a buffet. More specifically, Old Country Buffet.</p>
 
       <h2>Resources</h2>
       <ul>
@@ -59,22 +64,28 @@
       </ul>
     </section>
   </main>
+    <!-- Vendor Scripts -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAC51CgW0JEd0tSa1b3L_KsClfvDkmDlQ&v=3.exp&libraries=visualization"></script>
     <script src="vendor/scripts/Chart.bundle.min.js"></script>
-    <script src="js/models/firebase.js"></script>
     <script src="vendor/scripts/page.js"></script>
+    <!-- Model Scripts -->
+    <script src="js/models/firebase.js"></script>
     <script src="js/models/bike.js"></script>
     <script src="js/models/map.js"></script>
     <script src="js/models/data-collector.js"></script>
+    <!-- View Scripts -->
     <script src="js/views/chartView.js"></script>
     <script src="js/views/mapView.js"></script>
     <script src="js/views/chart-avail.js"></script>
+    <!-- Controller Scripts -->
     <script src="js/controllers/mapController.js"></script>
-    <script src="js/controllers/routes.js"></script>
     <script src="js/controllers/chartController.js"></script>
+    <script src="js/controllers/statController.js"></script>
+    <script src="js/controllers/aboutController.js"></script>
+    <script src="js/controllers/routes.js"></script>
   </body>
 </html>
