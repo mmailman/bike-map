@@ -68,7 +68,7 @@ h3 {
 h4 {
   font-size: 1.2rem; }
 
-h2, h3 {
+h1, h2, h3 {
   margin: 1.25rem 0; }
 
 section {
@@ -130,6 +130,7 @@ main {
     padding: 1.25rem;
     padding-top: 2rem; } }
 .data-charts {
+  display: none;
   width: 100%;
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem; }
@@ -141,12 +142,20 @@ canvas {
 select {
   max-width: 100%; }
 
+.loading-hamster {
+  position: relative; }
+  .loading-hamster h3 {
+    position: absolute;
+    top: 1.25rem;
+    left: 0; }
+  .loading-hamster img {
+    max-width: 100%; }
+
 .googlemap {
   margin: 1.25rem auto;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  min-height: 20rem;
-  /* TODO: fix this once page is routing right */
+  min-height: 80vh;
   height: 100%; }
 
 .info-window {
@@ -159,5 +168,8 @@ select {
   margin-bottom: 1.25rem; }
 .about-page p:last-of-type {
   margin-bottom: 0; }
+.about-page ul {
+  list-style-type: disc;
+  margin-left: 1.25rem; }
 
 /*# sourceMappingURL=style.css.map */
