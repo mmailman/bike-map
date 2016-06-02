@@ -9,6 +9,7 @@
     if(!Station.all.length){
       Station.requestData(Station.initStation);
     }
+    ChartController.chartRender();
   };
   module.statController = statController;
 })(window);
