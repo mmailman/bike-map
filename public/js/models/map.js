@@ -33,7 +33,6 @@
     center: new google.maps.LatLng(47.618418, -122.350964),
     mapTypeId: google.maps.MapTypeId.STREET,
     zoom: 15,
-    maxZoom: 15,
     zoomControl: true,
     zoomOptions: {
       position: google.maps.ControlPosition.RIGHT_CENTER
@@ -106,7 +105,7 @@
     }
   };
 
-  BikeMap.removeDirections = function() {
+  BikeMap.resetDirections = function() {
     BikeMap.directionsDisplay.setMap(null);
     BikeMap.map.setOptions({
       zoom: 15
