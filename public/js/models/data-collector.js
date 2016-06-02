@@ -53,6 +53,7 @@ var oneStationHourlyAverage = function(array,station) {
 
 ref.on('value', function(snapshot) {
   snapshotVal = snapshot.val();
+  // TODO:write overlay change call here
   console.log(snapshot.val());
   bikesAvailableAll();
   docksAvailableAll();
