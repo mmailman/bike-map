@@ -11,5 +11,9 @@
     }
     ChartController.chartRender();
   };
+  statController.showCharts = function(){
+    $('.loading-hamster').hide();
+    $('.data-charts').show();
+  };
   module.statController = statController;
 })(window);

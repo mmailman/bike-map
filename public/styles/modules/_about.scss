@@ -5,4 +5,8 @@
   p:last-of-type {
     margin-bottom: 0;
   }
+  ul {
+    list-style-type: disc;
+    margin-left: $gutter;
+  }
 }
