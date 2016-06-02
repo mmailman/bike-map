@@ -3,9 +3,10 @@
   var mapController = {};
 
   mapController.index = function(ctx, next) {
-    Station.requestData(Station.initStation);
+    Station.requestData(Station.initStation).done(function(){
+      if(next) next();
+    });
     // mapController.findNearestStationHandler();
-    if(next) next();
   };
 
   // mapController.findNearestStationHandler = function() {
