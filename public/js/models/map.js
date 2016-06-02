@@ -29,10 +29,11 @@
   ];
 
   var mapOptions = {
-    zoom: 15,
     styles: styleArray,
     center: new google.maps.LatLng(47.618418, -122.350964),
     mapTypeId: google.maps.MapTypeId.STREET,
+    zoom: 15,
+    maxZoom: 15,
     zoomControl: true,
     zoomOptions: {
       position: google.maps.ControlPosition.RIGHT_CENTER
@@ -50,6 +51,8 @@
   };
 
   BikeMap.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  BikeMap.directionsService = new google.maps.DirectionsService;
+  BikeMap.directionsDisplay = new google.maps.DirectionsRenderer;
 
   google.maps.event.addDomListener(window, 'resize', function() {
     var center = BikeMap.map.getCenter();
@@ -82,18 +85,16 @@
         }).reverse();
 
         //Directions Api calls
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        directionsDisplay.setMap(BikeMap.map);
+        BikeMap.directionsDisplay.setMap(BikeMap.map);
 
-        directionsService.route({
+        BikeMap.directionsService.route({
           origin: pos.lat + ',' + pos.lng,
           destination: distanceArray[0].station.la + ',' + distanceArray[0].station.lo,
           travelMode: google.maps.TravelMode.BICYCLING,
           unitSystem: google.maps.UnitSystem.IMPERIAL
         }, function(response, status){
           if(status === google.maps.DirectionsStatus.OK){
-            directionsDisplay.setDirections(response);
+            BikeMap.directionsDisplay.setDirections(response);
           } else {
             window.alert('Directions request failed due to ' + status);
           }
@@ -103,6 +104,13 @@
     } else {
       alert('You must allow Google to use your location for this feature.');
     }
+  };
+
+  BikeMap.removeDirections = function() {
+    BikeMap.directionsDisplay.setMap(null);
+    BikeMap.map.setOptions({
+      zoom: 15
+    });
   };
 
   BikeMap.getDistance = function(originLat, originLng, destLat, destLng, unit) {
