@@ -3,8 +3,6 @@
 (function(module) {
   var BikeMap = {};
 
-  var infowindow;
-
   var styleArray = [
     {
       featureType: 'all',
@@ -59,36 +57,6 @@
     BikeMap.map.setCenter(center);
   });
 
-  BikeMap.initMarkers = function() {
-    Station.all.forEach(function(station) {
-      var marker = new google.maps.Marker({
-        position: {lat: station.la, lng: station.lo},
-        map: BikeMap.map,
-        icon: 'images/icons/parking_bicycle-3.png',
-        title: station.s,
-        bikesAvailable: station.ba,
-        docksAvailable: station.da,
-        lastUpdated: BikeMap.formatTimeStamp(station.lu)
-      });
-
-      marker.addListener('click', function() {
-        BikeMap.map.setCenter(marker.getPosition());
-        if (infowindow) {
-          infowindow.close();
-        }
-
-        infowindow = new google.maps.InfoWindow({
-          content: '<span class=\"info-window\">Location: <span class="info-item">' + marker.title +
-          '</span><br />' + 'Bikes Available: <span class="info-item">' + marker.bikesAvailable +
-          '</span><br />' + 'Docks Available: <span class="info-item">' + marker.docksAvailable +
-          '</span><br />' + 'Last Updated: <span class="info-item">' + marker.lastUpdated + '</span></span>'
-        });
-
-        infowindow.open(BikeMap.map, marker);
-      });
-    });
-  };
-
   BikeMap.getDirections = function() {
     if (navigator.geolocation) {
       //Gets the origin point, the user's position is the origin point.
@@ -132,6 +100,8 @@
         });
         console.log(distanceArray);
       });
+    } else {
+      alert('You must allow Google to use your location for this feature.');
     }
   };
 
@@ -146,13 +116,11 @@
     dist = Math.acos(dist);
     dist = dist * 180 / Math.PI;
     dist = dist * 60 * 1.515;
-    if (unit === 'K') {
+    if (unit === 'K') {  //converts to km if K is passed as a unit parameter.
       dist = dist * 1.609344;
-    }; //converts to km
+    };
     return dist;
   };
-
-  // dist = Math.round(dist * 100) / 100;
 
   module.BikeMap = BikeMap;
 
