@@ -1,10 +1,10 @@
 'use strict';
 function displayAvailChart(bikeArray, dockArray) {
+  // bikeAvailChart;
   if (bikeAvailChart){
     console.log(bikeAvailChart);
     bikeAvailChart.destroy();
   }
-  var bikeAvailChart;
   var bikectx = document.getElementById('chart-bikeavail').getContext('2d');
   bikeAvailChart = new Chart(bikectx, {
     type: 'line',
