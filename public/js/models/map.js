@@ -9,8 +9,8 @@
     {
       featureType: 'all',
       stylers: [
-        { hue: '#00ffe6' },
-        { saturation: -20 }
+        { hue: '#002244' },
+        { saturation: -40 }
       ]
     },
     {
