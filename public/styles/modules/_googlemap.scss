@@ -7,7 +7,8 @@
 }
 .info-window {
   line-height: 1.25;
-}
-.info-window strong {
-  font-weight: bold;
+  .info-item {
+    font-weight: bold;
+    color: $navy;
+  }
 }

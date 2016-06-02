@@ -78,10 +78,10 @@
         }
 
         infowindow = new google.maps.InfoWindow({
-          content: '<span class=\"info-window\"><strong>Location: </strong>' + marker.title +
-          '<br />' + '<strong>Bikes Available: </strong>' + marker.bikesAvailable +
-          '<br />' + '<strong>Docks Available: </strong>' + marker.docksAvailable +
-          '<br />' + '<strong>Last Updated: </strong>' + marker.lastUpdated + '</span>'
+          content: '<span class=\"info-window\">Location: <span class="info-item">' + marker.title +
+          '</span><br />' + 'Bikes Available: <span class="info-item">' + marker.bikesAvailable +
+          '</span><br />' + 'Docks Available: <span class="info-item">' + marker.docksAvailable +
+          '</span><br />' + 'Last Updated: <span class="info-item">' + marker.lastUpdated + '</span></span>'
         });
 
         infowindow.open(BikeMap.map, marker);
