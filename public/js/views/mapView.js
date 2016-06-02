@@ -32,7 +32,7 @@
     });
   };
 
-  Mapview.renderRoute = function(origin,distanceArray) {
+  MapView.renderRoute = function(origin,distanceArray) {
     // //Directions Api calls
     // var directionsService = new google.maps.DirectionsService;
     // var directionsDisplay = new google.maps.DirectionsRenderer;
