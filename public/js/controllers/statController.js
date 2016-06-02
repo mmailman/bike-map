@@ -5,6 +5,7 @@
   var statController = {};
   statController.index = function(){
     $('.stats-page').show().siblings().hide();
+    $('.nearest').hide();
     if(!Station.all){
       Station.requestData(Station.initStation);
     }

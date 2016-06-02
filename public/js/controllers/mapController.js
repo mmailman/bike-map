@@ -4,6 +4,7 @@
 
   mapController.index = function() {
     $('.map-page').show().siblings().hide();
+    $('.nearest').show();
     Station.requestData(Station.initStation);
     mapController.findNearestStationHandler();
   };
