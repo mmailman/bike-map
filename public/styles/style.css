@@ -94,7 +94,9 @@ main {
 @media screen and (min-width: 48rem) {
   main {
     max-width: 60rem;
-    margin: 0 auto; } }
+    margin: 0 auto;
+    padding: 1.25rem;
+    padding-top: 2rem; } }
 .data-charts {
   width: 100%;
   margin-bottom: 1.25rem;
