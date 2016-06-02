@@ -58,7 +58,7 @@
     gba = [];
     for(var i = 0 ; i < Object.keys(DataCollector.snapshotVal.data).length; i++) {
       temp = [];
-      snapshotVal.data[Object.keys(DataCollector.snapshotVal.data)[i]].stations.forEach(function(station) {
+      DataCollector.snapshotVal.data[Object.keys(DataCollector.snapshotVal.data)[i]].stations.forEach(function(station) {
         temp.push(station.ba);
       });
       gba.push(temp);
@@ -69,7 +69,7 @@
     gda = [];
     for(var i = 0 ; i < Object.keys(DataCollector.snapshotVal.data).length; i++) {
       temp = [];
-      snapshotVal.data[Object.keys(DataCollector.snapshotVal.data)[i]].stations.forEach(function(station) {
+      DataCollector.snapshotVal.data[Object.keys(DataCollector.snapshotVal.data)[i]].stations.forEach(function(station) {
         temp.push(station.da);
       });
       gda.push(temp);
