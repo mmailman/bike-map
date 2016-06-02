@@ -1,6 +1,6 @@
 'use strict';
 (function(module) {
-  var chartView = {};
+  var ChartView = {};
 
   DataCollector.ref.on('value', function(snapshot) {
     DataCollector.snapshotVal = snapshot.val();
@@ -8,13 +8,13 @@
     console.log(snapshot.val());
     DataCollector.bikesAvailableAll();
     DataCollector.docksAvailableAll();
-    chartView.dropDown();
+    ChartView.dropDown();
     ChartAvail.displayAvailChart(DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gba),12),DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gda),12));
   }, function(errorObject) {
     console.log('The read failed: ' + errorObject.code);
   });
 
-  chartView.dropDown = function() {
+  ChartView.dropDown = function() {
     Station.all.forEach(function(station,index) {
       $('#station-select').append(function() {
         var template = Handlebars.compile($('#station-filter-template').text());
@@ -23,5 +23,5 @@
     });
   };
 
-  module.chartView = chartView;
+  module.ChartView = ChartView;
 })(window);
