@@ -26,10 +26,14 @@
   <main>
     <section class="stats-page">
       <h2>Pronto Statistics</h2>
-      <select class="" id="station-select">
-        <option value=""> Select Your Station </option>
-      </select>
+      <div class="loading-hamster">
+        <h3>Loading...</h3>
+        <img src="images/icons/hamster.gif" alt="Loading..."/>
+      </div>
       <div class="data-charts">
+        <select id="station-select">
+          <option value=""> Select Your Station </option>
+        </select>
         <canvas id="chart-bikeavail"></canvas>
       </div>
     </section>
