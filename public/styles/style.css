@@ -151,9 +151,9 @@ select {
 
 .info-window {
   line-height: 1.25; }
-
-.info-window strong {
-  font-weight: bold; }
+  .info-window .info-item {
+    font-weight: bold;
+    color: #002244; }
 
 p {
   margin-bottom: 1.25rem; }

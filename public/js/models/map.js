@@ -64,7 +64,7 @@
       var marker = new google.maps.Marker({
         position: {lat: station.la, lng: station.lo},
         map: BikeMap.map,
-        icon: 'images/icons/parking_bicycle-2.png',
+        icon: 'images/icons/parking_bicycle-3.png',
         title: station.s,
         bikesAvailable: station.ba,
         docksAvailable: station.da,
