@@ -1,3 +1,4 @@
+'use strict';
 (function(module) {
   var chartView = {};
 
@@ -8,7 +9,7 @@
     DataCollector.bikesAvailableAll();
     DataCollector.docksAvailableAll();
     chartView.dropDown();
-    displayAvailChart(DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gba),12),DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gda),12));
+    ChartAvail.displayAvailChart(DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gba),12),DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gda),12));
   }, function(errorObject) {
     console.log('The read failed: ' + errorObject.code);
   });
