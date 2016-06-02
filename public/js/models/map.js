@@ -105,6 +105,9 @@
   };
 
   BikeMap.resetDirections = function() {
+    if(MapView.infoWindow) {
+      MapView.infoWindow.close();
+    }
     BikeMap.directionsDisplay.setMap(null);
     BikeMap.map.setOptions({
       zoom: 15
