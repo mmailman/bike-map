@@ -4,8 +4,7 @@
 
   DataCollector.ref.on('value', function(snapshot) {
     DataCollector.snapshotVal = snapshot.val();
-    // TODO:write overlay change call here
-    console.log(snapshot.val());
+    statController.showCharts();
     DataCollector.bikesAvailableAll();
     DataCollector.docksAvailableAll();
     ChartView.dropDown();
