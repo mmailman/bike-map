@@ -12,8 +12,10 @@ select {
   max-width: 100%;
 }
 .loading-hamster {
+  text-align: center;
   position:relative;
   h3 {
+    text-align: left;
     position:absolute;
     top: $gutter;
     left: 0;
