@@ -61,7 +61,7 @@
     if (navigator.geolocation) {
       //Gets the origin point, the user's position is the origin point.
       next(navigator.geolocation.getCurrentPosition(function(position) {
-        return {
+        ctx.origin = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
@@ -73,8 +73,8 @@
     //Produces an array of station objects sorted by distance
     next(Station.all.map(function(station) {
       return {
-        distance: BikeMap.getDistance(next.lat, next.lng, station.la, station.lo),
-        origin: {lat: next.lat, lng: next.lng},
+        distance: BikeMap.getDistance(ctx.origin.lat, ctx.origin.lng, station.la, station.lo),
+        origin: {lat: ctx.origin.lat, lng: ctx.origin.lng},
         station: station
       };
     }).sort(function(a, b) {
