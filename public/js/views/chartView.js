@@ -8,7 +8,7 @@
     DataCollector.bikesAvailableAll();
     DataCollector.docksAvailableAll();
     chartView.dropDown();
-    DataCollector.displayAvailChart(DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gba),12),DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gda),12));
+    displayAvailChart(DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gba),12),DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gda),12));
   }, function(errorObject) {
     console.log('The read failed: ' + errorObject.code);
   });
