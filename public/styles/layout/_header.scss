@@ -1,7 +1,7 @@
 header {
   position: fixed;
   height: 2rem;
-  background: $gray;
+  background: $darkgray;
   width: 100%;
   z-index: 2;
 }
@@ -18,13 +18,16 @@ nav {
     line-height: 2rem;
     padding-right: 0.5rem;
   }
+  li:hover {
+    background: $gray;
+  }
   a {
     text-decoration: none;
     color: #fff;
+    display: block;
   }
   a:hover {
-    text-decoration: underline;
-    color: $green;
+    color: #000;
   }
   .nearest {
     float: right;
@@ -38,7 +41,7 @@ nav {
     li {
       font-size: 1.25rem;
       line-height: 2.5rem;
-      padding-right: $gutter;
+      padding: 0 $gutter;
     }
   }
 }
