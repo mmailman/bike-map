@@ -7,8 +7,8 @@
     {
       featureType: 'all',
       stylers: [
-        { hue: '#00ffe6' },
-        { saturation: -20 }
+        { hue: '#002244' },
+        { saturation: -40 }
       ]
     },
     {
@@ -101,7 +101,7 @@
         console.log(distanceArray);
       });
     } else {
-      alert('You must allow google to use your location for this feature.');
+      alert('You must allow Google to use your location for this feature.');
     }
   };
 

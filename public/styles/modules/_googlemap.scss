@@ -5,3 +5,10 @@
   min-height: 20rem; /* TODO: fix this once page is routing right */
   height: 100%;
 }
+.info-window {
+  line-height: 1.25;
+  .info-item {
+    font-weight: bold;
+    color: $navy;
+  }
+}
