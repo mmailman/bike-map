@@ -1,7 +1,7 @@
 'use strict';
 (function(module) {
   var MapView = {};
-  var infowindow;
+  MapView.infoWindow;
 
   MapView.initMarkers = function() {
     Station.all.forEach(function(station) {
@@ -17,18 +17,18 @@
 
       marker.addListener('click', function() {
         BikeMap.map.setCenter(marker.getPosition());
-        if (infowindow) {
-          infowindow.close();
+        if (MapView.infoWindow) {
+          MapView.infoWindow.close();
         }
 
-        infowindow = new google.maps.InfoWindow({
+        MapView.infoWindow = new google.maps.InfoWindow({
           content: '<span class=\"info-window\"><p>Location: <span class="info-item">' + marker.title +
           '</span></p>' + '<p>Bikes Available: <span class="info-item">' + marker.bikesAvailable +
           '</span></p>' + '<p>Docks Available: <span class="info-item">' + marker.docksAvailable +
           '</span></p>' + '<p>Last Updated: <span class="info-item">' + marker.lastUpdated + '</span></p>'
         });
 
-        infowindow.open(BikeMap.map, marker);
+        MapView.infoWindow.open(BikeMap.map, marker);
       });
     });
   };

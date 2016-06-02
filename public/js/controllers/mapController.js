@@ -12,12 +12,12 @@
   mapController.findNearestStationHandler = function() {
     $('#find-nearest-station').on('click', function(e) {
       e.preventDefault();
-      if ($('#find-nearest-station').text() === 'Station Nearest to Me!') {
+      if ($('#find-nearest-station').text() === 'Nearest Station!') {
         BikeMap.getDirections();
         $('#find-nearest-station').text('Reset Directions');
       } else {
         BikeMap.resetDirections();
-        $('#find-nearest-station').text('Station Nearest to Me!');
+        $('#find-nearest-station').text('Nearest Station!');
       }
     });
   };
