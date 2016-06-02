@@ -1,7 +1,9 @@
 'use strict';
 function displayAvailChart(bikeArray, dockArray) {
+  if (bikeAvailChart){
+    bikeAvailChart.removeData();
+  }
   var bikeAvailChart;
-  bikeAvailChart.removeData();
   var bikectx = document.getElementById('chart-bikeavail').getContext('2d');
   bikeAvailChart = new Chart(bikectx, {
     type: 'line',
