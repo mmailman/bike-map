@@ -98,7 +98,6 @@
             window.alert('Directions request failed due to ' + status);
           }
         });
-        console.log(distanceArray);
       });
     } else {
       alert('You must allow Google to use your location for this feature.');

@@ -1,86 +1,80 @@
-var snapshotVal;
-var ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
-var gba = [];
-var gda = [];
-var result = [];
-var averageAll = [];
+(function(module) {
+  var DataCollector = {};
 
-var averageAllFilter = function(array) {
-  averageAll = [];
-  for(var i = 0; i < array.length; i ++) {
-    averageAll.push(Math.floor(array[i].reduce(function(prev,cur){
-      return (prev + cur);
-    }) / array[i].length));
-  }
-  return averageAll;
-};
-
-var condenseAverage = function(array, interval) {
+  DataCollector.snapshotVal;
+  DataCollector.ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
+  DataCollector.gba = [];
+  DataCollector.gda = [];
   var result = [];
-  for (var i = 0; i < array.length; i += interval) {
-    var sum = array.slice(i, i + interval).reduce(function(prev, cur){
-      return prev + cur;
-    });
-    result.push(Math.floor(sum / interval));
-  }
-  result.pop();
-  return result;
-};
-//station will be 0-53.
-var oneStationByInterval = function(array, interval, station) {
-  var result = [];
-  for (var i = 0; i < array.length; i += interval) {
-    result.push(array[i][station]);
-  }
-  return result;
-};
+  var averageAll = [];
 
-var oneStationHourlyAverage = function(array,station) {
-  var result = [];
-  var avg = [];
-  for (var i = 0; i < array.length; i++) {
-    result.push(array[i][station]);
+  DataCollector.averageAllFilter = function(array) {
+    averageAll = [];
+    for(var i = 0; i < array.length; i++) {
+      averageAll.push(Math.floor(array[i].reduce(function(prev,cur) {
+        return (prev + cur);
+      }) / array[i].length));
+    }
+    return averageAll;
   };
-  for (var i = 0; i < result.length; i += 12) {
-    var sum = result.slice(i, i + 12).reduce(function(prev, cur) {
-      return prev + cur;
-    });
-    avg.push(Math.floor(sum / 12));
-  }
-  avg.pop();
-  return avg;
-};
 
-ref.on('value', function(snapshot) {
-  snapshotVal = snapshot.val();
-  // TODO:write overlay change call here
-  console.log(snapshot.val());
-  bikesAvailableAll();
-  docksAvailableAll();
-  chartView.dropDown();
-  displayAvailChart(condenseAverage(averageAllFilter(gba),12),condenseAverage(averageAllFilter(gda),12));
-}, function (errorObject) {
-  console.log('The read failed: ' + errorObject.code);
-});
-
-function bikesAvailableAll() {
-  gba = [];
-  for(var i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
-    temp = [];
-    snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
-      temp.push(station.ba);
-    });
-    gba.push(temp);
+  DataCollector.condenseAverage = function(array, interval) {
+    var result = [];
+    for (var i = 0; i < array.length; i += interval) {
+      var sum = array.slice(i, i + interval).reduce(function(prev, cur) {
+        return prev + cur;
+      });
+      result.push(Math.floor(sum / interval));
+    }
+    result.pop();
+    return result;
   };
-}
 
-function docksAvailableAll() {
-  gda = [];
-  for(var i = 0 ; i < Object.keys(snapshotVal.data).length; i++){
-    temp = [];
-    snapshotVal.data[Object.keys(snapshotVal.data)[i]].stations.forEach(function(station){
-      temp.push(station.da);
-    });
-    gda.push(temp);
+  DataCollector.oneStationByInterval = function(array, interval, station) {
+    var result = [];
+    for (var i = 0; i < array.length; i += interval) {
+      result.push(array[i][station]);
+    }
+    return result;
   };
-}
+
+  DataCollector.oneStationHourlyAverage = function(array,station) {
+    var result = [];
+    var avg = [];
+    for (var i = 0; i < array.length; i++) {
+      result.push(array[i][station]);
+    };
+    for (var i = 0; i < result.length; i += 12) {
+      var sum = result.slice(i, i + 12).reduce(function(prev, cur) {
+        return prev + cur;
+      });
+      avg.push(Math.floor(sum / 12));
+    }
+    avg.pop();
+    return avg;
+  };
+
+  DataCollector.bikesAvailableAll = function() {
+    DataCollector.gba = [];
+    for(var i = 0 ; i < Object.keys(DataCollector.snapshotVal.data).length; i++) {
+      temp = [];
+      DataCollector.snapshotVal.data[Object.keys(DataCollector.snapshotVal.data)[i]].stations.forEach(function(station) {
+        temp.push(station.ba);
+      });
+      DataCollector.gba.push(temp);
+    };
+  };
+
+  DataCollector.docksAvailableAll = function() {
+    DataCollector.gda = [];
+    for(var i = 0 ; i < Object.keys(DataCollector.snapshotVal.data).length; i++) {
+      temp = [];
+      DataCollector.snapshotVal.data[Object.keys(DataCollector.snapshotVal.data)[i]].stations.forEach(function(station) {
+        temp.push(station.da);
+      });
+      DataCollector.gda.push(temp);
+    };
+  };
+
+  module.DataCollector = DataCollector;
+})(window);

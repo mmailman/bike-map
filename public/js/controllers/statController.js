@@ -9,6 +9,7 @@
     if(!Station.all.length){
       Station.requestData(Station.initStation);
     }
+    ChartController.chartRender();
   };
   statController.showCharts = function(){
     $('.loading-hamster').hide();
