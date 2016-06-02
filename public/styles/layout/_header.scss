@@ -30,3 +30,15 @@ nav {
     float: right;
   }
 }
+@media screen and (min-width: 48rem) {
+  header {
+    height: 2.5rem;
+  }
+  nav {
+    li {
+      font-size: 1.25rem;
+      line-height: 2.5rem;
+      padding-right: $gutter;
+    }
+  }
+}
