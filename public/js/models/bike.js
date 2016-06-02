@@ -24,11 +24,10 @@
     Station.all = data.stations.map(function(ele) {
       return new Station(ele);
     });
-    Station.mutateArrayId();
+    Station.all.forEach(function(a,b){
+      a.id = b;
+    });
   };
 
-  Station.mutatArrayId = Station.all.forEach(function(a,b){
-    a.id = b;
-  });
   module.Station = Station;
 })(window);
