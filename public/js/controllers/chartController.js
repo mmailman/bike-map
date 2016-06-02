@@ -1,4 +1,7 @@
 $('#station-select').on('change', function(){
-  if(true){};
-  displayAvailChart(oneStationHourlyAverage(gba,$('#station-select').val()),oneStationHourlyAverage(gda,$('#station-select').val()));
+  if($('#station-select').val() == ''){
+    displayAvailChart(condenseAverage(averageAllFilter(gba),12),condenseAverage(averageAllFilter(gda),12));
+  }else{
+    displayAvailChart(oneStationHourlyAverage(gba,$('#station-select').val()),oneStationHourlyAverage(gda,$('#station-select').val()));
+  }
 });
