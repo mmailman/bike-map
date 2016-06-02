@@ -3,8 +3,8 @@
 
   DataCollector.snapshotVal;
   DataCollector.ref = new Firebase('https://bike-map-fd305.firebaseio.com/');
-  var gba = [];
-  var gda = [];
+  DataCollector.gba = [];
+  DataCollector.gda = [];
   var result = [];
   var averageAll = [];
 
@@ -55,24 +55,24 @@
   };
 
   DataCollector.bikesAvailableAll = function() {
-    gba = [];
+    DataCollector.gba = [];
     for(var i = 0 ; i < Object.keys(DataCollector.snapshotVal.data).length; i++) {
       temp = [];
       DataCollector.snapshotVal.data[Object.keys(DataCollector.snapshotVal.data)[i]].stations.forEach(function(station) {
         temp.push(station.ba);
       });
-      gba.push(temp);
+      DataCollector.gba.push(temp);
     };
   };
 
   DataCollector.docksAvailableAll = function() {
-    gda = [];
+    DataCollector.gda = [];
     for(var i = 0 ; i < Object.keys(DataCollector.snapshotVal.data).length; i++) {
       temp = [];
       DataCollector.snapshotVal.data[Object.keys(DataCollector.snapshotVal.data)[i]].stations.forEach(function(station) {
         temp.push(station.da);
       });
-      gda.push(temp);
+      DataCollector.gda.push(temp);
     };
   };
 

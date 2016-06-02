@@ -8,14 +8,14 @@
     DataCollector.bikesAvailableAll();
     DataCollector.docksAvailableAll();
     chartView.dropDown();
-    DataCollector.displayAvailChart(DataCollector.condenseAverage(DataCollector.averageAllFilter(gba),12),DataCollector.condenseAverage(DataCollector.averageAllFilter(gda),12));
+    DataCollector.displayAvailChart(DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gba),12),DataCollector.condenseAverage(DataCollector.averageAllFilter(DataCollector.gda),12));
   }, function(errorObject) {
     console.log('The read failed: ' + errorObject.code);
   });
 
-  chartView.dropDown = function(){
-    Station.all.forEach(function(station,index){
-      $('#station-select').append(function(){
+  chartView.dropDown = function() {
+    Station.all.forEach(function(station,index) {
+      $('#station-select').append(function() {
         var template = Handlebars.compile($('#station-filter-template').text());
         return template(station);
       });
