@@ -5,7 +5,6 @@
   var bikeAvailChart = null;
   ChartAvail.displayAvailChart = function(bikeArray, dockArray) {
     if (bikeAvailChart){
-      console.log(bikeAvailChart);
       bikeAvailChart.destroy();
     }
     var bikectx = document.getElementById('chart-bikeavail').getContext('2d');

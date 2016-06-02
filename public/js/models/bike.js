@@ -13,8 +13,6 @@
   Station.requestData = function(callback){
     $.getJSON('https://secure.prontocycleshare.com/data/stations.json')
     .done(function(data){
-      console.log('Pronto API call data: ', data);
-      console.log(typeof(data));
       return data;
     }).done(callback).done(MapView.initMarkers);
   };
