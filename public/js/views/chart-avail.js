@@ -1,6 +1,6 @@
 'use strict';
+var bikeAvailChart = null;
 function displayAvailChart(bikeArray, dockArray) {
-  // bikeAvailChart;
   if (bikeAvailChart){
     console.log(bikeAvailChart);
     bikeAvailChart.destroy();
