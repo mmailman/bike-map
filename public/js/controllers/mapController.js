@@ -12,7 +12,13 @@
   mapController.findNearestStationHandler = function() {
     $('#find-nearest-station').on('click', function(e) {
       e.preventDefault();
-      BikeMap.getDirections();
+      if ($('#find-nearest-station').text() === 'Station Nearest to Me!') {
+        BikeMap.getDirections();
+        $('#find-nearest-station').text('Reset Directions');
+      } else {
+        BikeMap.resetDirections();
+        $('#find-nearest-station').text('Station Nearest to Me!');
+      }
     });
   };
 
