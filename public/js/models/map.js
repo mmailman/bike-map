@@ -100,6 +100,8 @@
         });
         console.log(distanceArray);
       });
+    } else {
+      alert('You must allow google to use your location for this feature.');
     }
   };
 
