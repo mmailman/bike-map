@@ -10,3 +10,14 @@ canvas {
 select {
   max-width: 100%;
 }
+.loading-hamster {
+  position:relative;
+  h3 {
+    position:absolute;
+    top: $gutter;
+    left: 0;
+  }
+  img {
+    max-width: 100%;
+  }
+}
