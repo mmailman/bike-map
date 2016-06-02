@@ -32,14 +32,14 @@
     });
   };
 
-  MapView.renderRoute = function(origin, distanceArray) {
+  MapView.renderRoute = function(distanceArray) {
     //Directions Api calls
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     directionsDisplay.setMap(BikeMap.map);
 
     directionsService.route({
-      origin: origin.lat + ',' + origin.lng,
+      origin: distanceArray[0].origin.lat + ',' + distanceArray[0].origin.lng,
       destination: distanceArray[0].station.la + ',' + distanceArray[0].station.lo,
       travelMode: google.maps.TravelMode.BICYCLING,
       unitSystem: google.maps.UnitSystem.IMPERIAL

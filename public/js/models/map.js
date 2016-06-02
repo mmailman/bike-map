@@ -73,7 +73,8 @@
     //Produces an array of station objects sorted by distance
     next(Station.all.map(function(station) {
       return {
-        distance: BikeMap.getDistance(origin.lat, origin.lng, station.la, station.lo),
+        distance: BikeMap.getDistance(next.lat, next.lng, station.la, station.lo),
+        origin: {lat: next.lat, lng: next.lng},
         station: station
       };
     }).sort(function(a, b) {
