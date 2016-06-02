@@ -16,7 +16,7 @@
       console.log('Pronto API call data: ', data);
       console.log(typeof(data));
       return data;
-    }).done(callback).done(mapView.initMarkers);
+    }).done(callback).done(MapView.initMarkers);
   };
 
   Station.initStation = function(data){

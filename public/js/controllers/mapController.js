@@ -4,15 +4,15 @@
 
   mapController.index = function() {
     Station.requestData(Station.initStation);
-    mapController.findNearestStationHandler();
+    // mapController.findNearestStationHandler();
   };
 
-  mapController.findNearestStationHandler = function() {
-    $('#find-nearest-station').on('click', function(e) {
-      e.preventDefault();
-      BikeMap.getDirections();
-    });
-  };
+  // mapController.findNearestStationHandler = function() {
+  //   $('#find-nearest-station').on('click', function(e) {
+  //     e.preventDefault();
+  //     BikeMap.getDirections();
+  //   });
+  // };
 
   module.mapController = mapController;
 })(window);

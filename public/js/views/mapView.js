@@ -32,24 +32,24 @@
     });
   };
 
-  Mapview.renderRoute = function(origin,distanceArray) {
-    // //Directions Api calls
-    // var directionsService = new google.maps.DirectionsService;
-    // var directionsDisplay = new google.maps.DirectionsRenderer;
-    // directionsDisplay.setMap(BikeMap.map);
-    //
-    // directionsService.route({
-    //   origin: pos.lat + ',' + pos.lng,
-    //   destination: distanceArray[0].station.la + ',' + distanceArray[0].station.lo,
-    //   travelMode: google.maps.TravelMode.BICYCLING,
-    //   unitSystem: google.maps.UnitSystem.IMPERIAL
-    // }, function(response, status){
-    //   if(status === google.maps.DirectionsStatus.OK){
-    //     directionsDisplay.setDirections(response);
-    //   } else {
-    //     window.alert('Directions request failed due to ' + status);
-    //   }
-    // });
+  MapView.renderRoute = function(origin, distanceArray) {
+    //Directions Api calls
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    directionsDisplay.setMap(BikeMap.map);
+
+    directionsService.route({
+      origin: origin.lat + ',' + origin.lng,
+      destination: distanceArray[0].station.la + ',' + distanceArray[0].station.lo,
+      travelMode: google.maps.TravelMode.BICYCLING,
+      unitSystem: google.maps.UnitSystem.IMPERIAL
+    }, function(response, status){
+      if(status === google.maps.DirectionsStatus.OK){
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
   };
 
   module.MapView = MapView;
