@@ -1,6 +1,18 @@
 (function(module) {
   var chartView = {};
 
+  DataCollector.ref.on('value', function(snapshot) {
+    DataCollector.snapshotVal = snapshot.val();
+    // TODO:write overlay change call here
+    console.log(snapshot.val());
+    DataCollector.bikesAvailableAll();
+    DataCollector.docksAvailableAll();
+    chartView.dropDown();
+    DataCollector.displayAvailChart(DataCollector.condenseAverage(DataCollector.averageAllFilter(gba),12),DataCollector.condenseAverage(DataCollector.averageAllFilter(gda),12));
+  }, function(errorObject) {
+    console.log('The read failed: ' + errorObject.code);
+  });
+
   chartView.dropDown = function(){
     Station.all.forEach(function(station,index){
       $('#station-select').append(function(){
@@ -9,5 +21,6 @@
       });
     });
   };
+
   module.chartView = chartView;
 })(window);
