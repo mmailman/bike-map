@@ -47,6 +47,7 @@ var oneStationHourlyAverage = function(array,station) {
     });
     avg.push(Math.floor(sum / 12));
   }
+  avg.pop();
   return avg;
 };
 

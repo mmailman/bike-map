@@ -1,8 +1,8 @@
 'use strict';
 function displayAvailChart(bikeArray, dockArray) {
-  console.log('displaying bike availability chart');
+  var bikeAvailChart;
   var bikectx = document.getElementById('chart-bikeavail').getContext('2d');
-  var bikeAvailChart = new Chart(bikectx, {
+  bikeAvailChart = new Chart(bikectx, {
     type: 'line',
     responsive: true,
     maintainAspectRatio: false,
