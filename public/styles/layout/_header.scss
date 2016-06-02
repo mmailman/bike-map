@@ -10,6 +10,7 @@ nav {
   ul {
     list-style-type: none;
     padding-left: 0.5rem;
+    display: inline-block;
   }
   li {
     display: inline-block;
@@ -23,5 +24,8 @@ nav {
   a:hover {
     text-decoration: underline;
     color: $green;
+  }
+  .nearest {
+    float: right;
   }
 }

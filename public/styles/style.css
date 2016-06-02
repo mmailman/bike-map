@@ -73,7 +73,8 @@ nav {
   margin: 0 auto; }
   nav ul {
     list-style-type: none;
-    padding-left: 0.5rem; }
+    padding-left: 0.5rem;
+    display: inline-block; }
   nav li {
     display: inline-block;
     line-height: 2rem;
@@ -84,6 +85,8 @@ nav {
   nav a:hover {
     text-decoration: underline;
     color: #69BE28; }
+  nav .nearest {
+    float: right; }
 
 main {
   width: 100%;
