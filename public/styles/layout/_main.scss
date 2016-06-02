@@ -8,5 +8,7 @@ main {
   main {
     max-width: 60rem;
     margin: 0 auto;
+    padding: $gutter;
+    padding-top: 2rem;
   }
 }

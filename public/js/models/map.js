@@ -7,8 +7,8 @@
     {
       featureType: 'all',
       stylers: [
-        { hue: '#00ffe6' },
-        { saturation: -20 }
+        { hue: '#002244' },
+        { saturation: -40 }
       ]
     },
     {
@@ -65,9 +65,8 @@
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-      }));
-    }
-  };
+    }));
+};
 
   BikeMap.calcDistance = function(ctx, next) {
     //Produces an array of station objects sorted by distance
