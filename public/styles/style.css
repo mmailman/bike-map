@@ -155,10 +155,9 @@ select {
     font-weight: bold;
     color: #002244; }
 
-p {
+.about-page p {
   margin-bottom: 1.25rem; }
-
-p:last-of-type {
+.about-page p:last-of-type {
   margin-bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */
